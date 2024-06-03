@@ -38,7 +38,7 @@ KBUILD_LINKER_STRING=$($HOME/tc/aosp-clang/bin/ld.lld --version | head -n 1 | pe
 export KBUILD_COMPILER_STRING
 export KBUILD_LINKER_STRING
 
-DEVICE=$1
+DEVICE=alioth
 
 if [ "${DEVICE}" = "alioth" ]; then
 DEFCONFIG=vendor/alioth_defconfig
@@ -136,7 +136,6 @@ if [ -f "out/arch/arm64/boot/Image" ] && [ -f "out/arch/arm64/boot/dtbo.img" ] &
 	echo ""
 	echo -e ${zipname} " is ready!"
 	echo ""
-        curl --upload-file ${zipname} https://free.keep.sh
 else
 	echo -e "\n Compilation Failed!"
 fi
